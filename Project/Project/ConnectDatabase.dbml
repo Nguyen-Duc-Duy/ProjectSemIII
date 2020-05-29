@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ManagerHotel_ProjectsXixao" Class="ConnectDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOPDUY-LM0HF;Initial Catalog=ManagerHotel_ProjectsXixao;User ID=sa" SettingsObjectName="Project.Properties.Settings" SettingsPropertyName="ManagerHotel_ProjectsXixaoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bills" Member="Bills">
+    <Type Name="Bill">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_em" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateFrom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="decript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="totals" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dateTo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prepay" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InputMoney" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OutMoney" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_Details_Bill" Member="Details_Bills" ThisKey="id" OtherKey="id_bill" Type="Details_Bill" />
+      <Association Name="Customer_Bill" Member="Customer" ThisKey="id_cus" OtherKey="id" Type="Customer" IsForeignKey="true" />
+      <Association Name="Employee_Bill" Member="Employee" ThisKey="id_em" OtherKey="id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Types_Room" Member="Types_Rooms">
+    <Type Name="Types_Room">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="moneys" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="descript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdultStandar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdultMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChildrentStandar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChildrentMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Types_Room_Room" Member="Rooms" ThisKey="id" OtherKey="id_type" Type="Room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CommonName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FormalName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountrySubType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sovereignty" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Capital" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CurrencyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TelephoneCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryCode3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryNumber" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="InternetCountryCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Flags" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Country_Customer" Member="Customers" ThisKey="Id" OtherKey="id_nation" Type="Customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="car_personal" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="adults" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="childrens" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_nation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="decript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Customer_Bill" Member="Bills" ThisKey="id" OtherKey="id_cus" Type="Bill" />
+      <Association Name="Country_Customer" Member="Country" ThisKey="id_nation" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Details_Bill" Member="Details_Bills">
+    <Type Name="Details_Bill">
+      <Column Name="id_bill" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_ser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_room" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Bill_Details_Bill" Member="Bill" ThisKey="id_bill" OtherKey="id" Type="Bill" IsForeignKey="true" />
+      <Association Name="Room_Details_Bill" Member="Room" ThisKey="id_room" OtherKey="id" Type="Room" IsForeignKey="true" />
+      <Association Name="Servicer_Details_Bill" Member="Servicer" ThisKey="id_ser" OtherKey="id" Type="Servicer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(125)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(125)" CanBeNull="true" />
+      <Column Name="avt" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="decript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Employee_Bill" Member="Bills" ThisKey="id" OtherKey="id_em" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rooms" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="id_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="address_room" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="descript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Room_Details_Bill" Member="Details_Bills" ThisKey="id" OtherKey="id_room" Type="Details_Bill" />
+      <Association Name="Types_Room_Room" Member="Types_Room" ThisKey="id_type" OtherKey="id" Type="Types_Room" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicers" Member="Servicers">
+    <Type Name="Servicer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sale" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Servicer_Details_Bill" Member="Details_Bills" ThisKey="id" OtherKey="id_ser" Type="Details_Bill" />
+    </Type>
+  </Table>
+</Database>
