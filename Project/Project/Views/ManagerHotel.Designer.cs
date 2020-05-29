@@ -277,6 +277,7 @@
             this.btnEmployee.TabIndex = 4;
             this.btnEmployee.Text = "Nhân Viên";
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnDashboard
             // 

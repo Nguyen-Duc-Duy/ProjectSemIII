@@ -154,16 +154,16 @@
     <Compile Include="Views\Customers\CustomersView.Designer.cs">
       <DependentUpon>CustomersView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Employees\InforEmployee.cs">
+    <Compile Include="Views\EmployeesV\InforEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Employees\InforEmployee.Designer.cs">
+    <Compile Include="Views\EmployeesV\InforEmployee.Designer.cs">
       <DependentUpon>InforEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Employees\EmployeesView.cs">
+    <Compile Include="Views\EmployeesV\EmployeesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Employees\EmployeesView.Designer.cs">
+    <Compile Include="Views\EmployeesV\EmployeesView.Designer.cs">
       <DependentUpon>EmployeesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
@@ -228,10 +228,10 @@
     <EmbeddedResource Include="Views\Customers\CustomersView.resx">
       <DependentUpon>CustomersView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Employees\InforEmployee.resx">
+    <EmbeddedResource Include="Views\EmployeesV\InforEmployee.resx">
       <DependentUpon>InforEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Employees\EmployeesView.resx">
+    <EmbeddedResource Include="Views\EmployeesV\EmployeesView.resx">
       <DependentUpon>EmployeesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">

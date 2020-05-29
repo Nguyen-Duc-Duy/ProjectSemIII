@@ -90,6 +90,7 @@
             this.sttRoom.Name = "sttRoom";
             this.sttRoom.Size = new System.Drawing.Size(23, 22);
             this.sttRoom.Text = "toolStripButton1";
+            this.sttRoom.Click += new System.EventHandler(this.sttRoom_Click);
             // 
             // comboFilter
             // 

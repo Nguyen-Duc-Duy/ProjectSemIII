@@ -71,6 +71,7 @@ namespace Project.Views.Setups
             s.stt = SttSer.Checked == true ? 1 : 0;
             s.descript = DescriptSer.Text;
             managerHotel.SubmitChanges();
+
             MessageBox.Show("Cập nhật thành công !");
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -1,5 +1,6 @@
 ﻿using Project.Views;
 using Project.Views.Customers;
+using Project.Views.Employees;
 using Project.Views.OrdersRoom;
 using Project.Views.PaysView;
 using Project.Views.Setups;
@@ -117,6 +118,12 @@ namespace Project
         {
             CustomersView c = new CustomersView();
             ChangeLayout(c);
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeesView em = new EmployeesView();
+            ChangeLayout(em);
         }
     }
 }

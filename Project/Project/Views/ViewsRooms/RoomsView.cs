@@ -212,5 +212,9 @@ namespace Project.Views
             string indexSelected = Convert.ToString(comboFilter.SelectedIndex);
         }
 
+        private void sttRoom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,8 @@ namespace Project.Views.Setups
         //lấy dữ liệu dịch vụ
         private void ShowDataService()
         {
+            managerHotel.Refresh(System.Data.Linq.RefreshMode.KeepChanges, managerHotel.Servicers);
+
             var listServices = managerHotel.Servicers.Select(x=> new {
                 id = x.id,
                 name = x.name,
@@ -52,7 +54,7 @@ namespace Project.Views.Setups
                 date_update = x.date_update
             });
             dataServices.DataSource = listServices;
-            dataServices.Columns["id"].Visible = false;
+            //dataServices.Columns["id"].Visible = false;
         }
         //hiển thi tương tác dịch vụ
 
@@ -60,20 +62,24 @@ namespace Project.Views.Setups
         Servicer seviceSelected;
         private void dataServices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idService = Convert.ToInt32(dataServices.CurrentRow.Cells[0].Value.ToString());
-            seviceSelected = managerHotel.Servicers.FirstOrDefault(x => x.id == idService);
-            //hiển thị nút
-            UpdateService.Visible = true;
-            ChangeSttService.Visible = true;
-            if (seviceSelected.stt == 1)
+            if (dataServices.CurrentRow != null)
             {
-                ChangeSttService.Image = Image.FromFile(Path.Combine(Application.StartupPath, @"..\..\Commons\icons\icons8_eye_32.png"));
-                ChangeSttService.Text = "Dịch vụ có thể dùng";
-            }
-            else if (seviceSelected.stt == 0)
-            {
-                ChangeSttService.Image = Image.FromFile(Path.Combine(Application.StartupPath, @"..\..\Commons\icons\icons8_invisible_32.png"));
-                ChangeSttService.Text = "Dịch vụ không thể dùng";
+                int idService = Convert.ToInt32(dataServices.CurrentRow.Cells["IdSer"].Value.ToString());
+
+                seviceSelected = managerHotel.Servicers.FirstOrDefault(x => x.id == idService);
+                //hiển thị nút
+                UpdateService.Visible = true;
+                ChangeSttService.Visible = true;
+                if (seviceSelected.stt == 1)
+                {
+                    ChangeSttService.Image = Image.FromFile(Path.Combine(Application.StartupPath, @"..\..\Commons\icons\icons8_eye_32.png"));
+                    ChangeSttService.Text = "Dịch vụ có thể dùng";
+                }
+                else if (seviceSelected.stt == 0)
+                {
+                    ChangeSttService.Image = Image.FromFile(Path.Combine(Application.StartupPath, @"..\..\Commons\icons\icons8_invisible_32.png"));
+                    ChangeSttService.Text = "Dịch vụ không thể dùng";
+                }
             }
         }
 
@@ -125,9 +131,29 @@ namespace Project.Views.Setups
                 ShowDataService();
             }
         }
+        //chức năng tìm kiếm dịch vụ
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string nameSearch = SearchServicer.Text;
+            var listServices = managerHotel.Servicers.Where(x=>x.name.Contains(nameSearch)).Select(x => new {
+                id = x.id,
+                name = x.name,
+                price = x.price,
+                sale = x.sale,
+                stt = x.stt == 0 ? "Đang tắt" : "Đang mở",
+                descript = x.descript,
+                date_created = x.date_created,
+                date_update = x.date_update
+            });
+            dataServices.DataSource = listServices;
+        }
+        //chức năng làm mới
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ServicerView();
+        }
 
 
-        
         //loại phòng
         private void Type_RoomsViews()
         {
@@ -137,17 +163,17 @@ namespace Project.Views.Setups
         //lấy danh sách loại phòng
         private void ShowDataType_Rooms()
         {
-            //managerHotel.Refresh(System.Data.Linq.RefreshMode.KeepChanges, managerHotel.Servicers);
+            managerHotel.Refresh(System.Data.Linq.RefreshMode.KeepChanges, managerHotel.Types_Rooms);
             var listType_Rooms = from t in managerHotel.Types_Rooms select t;
             dataType_Rooms.DataSource = listType_Rooms;
-            dataType_Rooms.Columns["id"].Visible = false;
+            //dataType_Rooms.Columns["id"].Visible = false;
         }
        
         //lấy loại phòng trên bảng
         Types_Room TypeSelected;
         private void dataType_Rooms_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idType = Convert.ToInt32(dataType_Rooms.CurrentRow.Cells[0].Value.ToString());
+            int idType = Convert.ToInt32(dataType_Rooms.CurrentRow.Cells["idType"].Value.ToString());
             TypeSelected = managerHotel.Types_Rooms.FirstOrDefault(x => x.id == idType);
             UpdateType_Room.Visible = true;
             ChangeSttType_Room.Visible = true;
@@ -221,9 +247,24 @@ namespace Project.Views.Setups
             dataType_Rooms.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
 
-        private void dataServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataServices_SelectionChanged(object sender, EventArgs e)
         {
+        }
 
+        private void dataType_Rooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+        //chức năng làm mới loại phòng
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Type_RoomsViews();
+        }
+        //chức năng tìm kiếm loại phòng
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nameType = SearchType.Text;
+            var listType_Rooms = from t in managerHotel.Types_Rooms where t.name.Contains(nameType) select t;
+            dataType_Rooms.DataSource = listType_Rooms;
         }
     }
 }

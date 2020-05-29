@@ -2,7 +2,7 @@
 GO
 USE ManagerHotel_ProjectsXixao
 GO
-select * from Types_Room
+select * from Employees
 GO
 
 -- table Room
@@ -170,3 +170,5 @@ ADD CONSTRAINT FK_DetailsRoom FOREIGN KEY  (id_room) REFERENCES Rooms(id)
 ALTER TABLE Customers
 ADD CONSTRAINT FK_CusCountry FOREIGN KEY  (id_nation) REFERENCES country(id)
 
+SELECT * FROM Servicers
+GO
