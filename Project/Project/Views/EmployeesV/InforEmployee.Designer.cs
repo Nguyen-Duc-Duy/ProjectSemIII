@@ -43,6 +43,10 @@
             this.CreateEm = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.UpdateEm = new System.Windows.Forms.Button();
+            this.labelErrorEmail = new System.Windows.Forms.Label();
+            this.labelErrorPhone = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,12 +193,52 @@
             this.UpdateEm.UseVisualStyleBackColor = false;
             this.UpdateEm.Click += new System.EventHandler(this.UpdateEm_Click);
             // 
+            // labelErrorEmail
+            // 
+            this.labelErrorEmail.AutoSize = true;
+            this.labelErrorEmail.Location = new System.Drawing.Point(130, 100);
+            this.labelErrorEmail.Name = "labelErrorEmail";
+            this.labelErrorEmail.Size = new System.Drawing.Size(35, 13);
+            this.labelErrorEmail.TabIndex = 21;
+            this.labelErrorEmail.Text = "label5";
+            // 
+            // labelErrorPhone
+            // 
+            this.labelErrorPhone.AutoSize = true;
+            this.labelErrorPhone.Location = new System.Drawing.Point(130, 148);
+            this.labelErrorPhone.Name = "labelErrorPhone";
+            this.labelErrorPhone.Size = new System.Drawing.Size(35, 13);
+            this.labelErrorPhone.TabIndex = 22;
+            this.labelErrorPhone.Text = "label7";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(130, 189);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "label7";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(130, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "label7";
+            // 
             // InforEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(428, 430);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelErrorPhone);
+            this.Controls.Add(this.labelErrorEmail);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.PassEm);
             this.Controls.Add(this.SDTEm);
@@ -236,5 +280,9 @@
         private System.Windows.Forms.Button CreateEm;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button UpdateEm;
+        private System.Windows.Forms.Label labelErrorEmail;
+        private System.Windows.Forms.Label labelErrorPhone;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

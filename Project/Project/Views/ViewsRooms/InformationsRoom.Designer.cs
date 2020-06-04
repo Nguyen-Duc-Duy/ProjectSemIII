@@ -48,7 +48,6 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label1.Image = global::Project.Properties.Resources.icons8_error_32;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -123,9 +122,9 @@
             this.StatusRoom.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusRoom.Location = new System.Drawing.Point(28, 303);
             this.StatusRoom.Name = "StatusRoom";
-            this.StatusRoom.Size = new System.Drawing.Size(139, 20);
+            this.StatusRoom.Size = new System.Drawing.Size(175, 20);
             this.StatusRoom.TabIndex = 7;
-            this.StatusRoom.Text = "Trạng thái (hoạt động)";
+            this.StatusRoom.Text = "Trạng thái (Có thể hoạt động)";
             this.StatusRoom.UseVisualStyleBackColor = true;
             // 
             // createRoom

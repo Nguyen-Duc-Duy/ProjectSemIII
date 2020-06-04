@@ -33,8 +33,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.createRoom = new System.Windows.Forms.ToolStripButton();
             this.updateRoom = new System.Windows.Forms.ToolStripButton();
-            this.sttRoom = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.comboFilter = new System.Windows.Forms.ComboBox();
+            this.pay = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,8 @@
             this.layoutRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.layoutRooms.AutoScroll = true;
+            this.layoutRooms.BackColor = System.Drawing.Color.White;
             this.layoutRooms.Location = new System.Drawing.Point(0, 73);
             this.layoutRooms.Name = "layoutRooms";
             this.layoutRooms.Size = new System.Drawing.Size(645, 311);
@@ -50,11 +53,12 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createRoom,
             this.updateRoom,
-            this.sttRoom});
+            this.toolStripButton1,
+            this.pay});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(645, 25);
@@ -79,18 +83,19 @@
             this.updateRoom.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.updateRoom.Name = "updateRoom";
             this.updateRoom.Size = new System.Drawing.Size(23, 22);
-            this.updateRoom.Text = "toolStripButton2";
+            this.updateRoom.Text = "Cập nhật";
             this.updateRoom.Click += new System.EventHandler(this.updateRoom_Click);
             // 
-            // sttRoom
+            // toolStripButton1
             // 
-            this.sttRoom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sttRoom.Image = ((System.Drawing.Image)(resources.GetObject("sttRoom.Image")));
-            this.sttRoom.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sttRoom.Name = "sttRoom";
-            this.sttRoom.Size = new System.Drawing.Size(23, 22);
-            this.sttRoom.Text = "toolStripButton1";
-            this.sttRoom.Click += new System.EventHandler(this.sttRoom_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Đặt phòng";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // comboFilter
             // 
@@ -103,6 +108,16 @@
             this.comboFilter.Size = new System.Drawing.Size(195, 24);
             this.comboFilter.TabIndex = 0;
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
+            // 
+            // pay
+            // 
+            this.pay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pay.Image = ((System.Drawing.Image)(resources.GetObject("pay.Image")));
+            this.pay.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pay.Name = "pay";
+            this.pay.Size = new System.Drawing.Size(23, 22);
+            this.pay.Text = "Thanh toán";
+            this.pay.Click += new System.EventHandler(this.pay_Click);
             // 
             // RoomsView
             // 
@@ -128,7 +143,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton createRoom;
         private System.Windows.Forms.ToolStripButton updateRoom;
-        private System.Windows.Forms.ToolStripButton sttRoom;
         private System.Windows.Forms.ComboBox comboFilter;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton pay;
     }
 }

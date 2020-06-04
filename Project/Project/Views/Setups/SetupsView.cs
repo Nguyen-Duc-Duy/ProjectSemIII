@@ -126,7 +126,7 @@ namespace Project.Views.Setups
         {
             InforService i = new InforService(seviceSelected);
             i.ShowDialog();
-            if (i.DialogResult == DialogResult.Yes)
+            if (i.DialogResult == DialogResult.OK)
             {
                 ShowDataService();
             }
@@ -265,6 +265,11 @@ namespace Project.Views.Setups
             string nameType = SearchType.Text;
             var listType_Rooms = from t in managerHotel.Types_Rooms where t.name.Contains(nameType) select t;
             dataType_Rooms.DataSource = listType_Rooms;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

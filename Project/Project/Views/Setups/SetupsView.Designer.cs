@@ -28,25 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetupsView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SearchServicer = new System.Windows.Forms.TextBox();
             this.dataServices = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.CreateService = new System.Windows.Forms.ToolStripButton();
-            this.UpdateService = new System.Windows.Forms.ToolStripButton();
-            this.ChangeSttService = new System.Windows.Forms.ToolStripButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.SearchType = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataType_Rooms = new System.Windows.Forms.DataGridView();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.CreateType_Room = new System.Windows.Forms.ToolStripButton();
-            this.UpdateType_Room = new System.Windows.Forms.ToolStripButton();
-            this.ChangeSttType_Room = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.IdSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,19 +47,34 @@
             this.DescriptSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCreateSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateUpdateSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.CreateService = new System.Windows.Forms.ToolStripButton();
+            this.UpdateService = new System.Windows.Forms.ToolStripButton();
+            this.ChangeSttService = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.SearchType = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataType_Rooms = new System.Windows.Forms.DataGridView();
             this.idType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moneys = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.CreateType_Room = new System.Windows.Forms.ToolStripButton();
+            this.UpdateType_Room = new System.Windows.Forms.ToolStripButton();
+            this.ChangeSttType_Room = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataServices)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -91,6 +97,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dịch Vụ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -103,7 +110,7 @@
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Location = new System.Drawing.Point(4, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 207);
+            this.panel1.Size = new System.Drawing.Size(796, 246);
             this.panel1.TabIndex = 1;
             // 
             // SearchServicer
@@ -122,6 +129,7 @@
             this.dataServices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataServices.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdSer,
@@ -136,11 +144,87 @@
             this.dataServices.Location = new System.Drawing.Point(3, 41);
             this.dataServices.Name = "dataServices";
             this.dataServices.ReadOnly = true;
-            this.dataServices.Size = new System.Drawing.Size(790, 163);
+            this.dataServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataServices.Size = new System.Drawing.Size(790, 202);
             this.dataServices.TabIndex = 1;
             this.dataServices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataServices_CellClick);
             this.dataServices.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataServices_RowPrePaint);
             this.dataServices.SelectionChanged += new System.EventHandler(this.dataServices_SelectionChanged);
+            // 
+            // IdSer
+            // 
+            this.IdSer.DataPropertyName = "id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.IdSer.DefaultCellStyle = dataGridViewCellStyle1;
+            this.IdSer.FillWeight = 40F;
+            this.IdSer.HeaderText = "id";
+            this.IdSer.Name = "IdSer";
+            this.IdSer.ReadOnly = true;
+            this.IdSer.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 30F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // NameSer
+            // 
+            this.NameSer.DataPropertyName = "name";
+            this.NameSer.HeaderText = "Tên Dịch Vụ";
+            this.NameSer.Name = "NameSer";
+            this.NameSer.ReadOnly = true;
+            // 
+            // PriceSer
+            // 
+            this.PriceSer.DataPropertyName = "price";
+            this.PriceSer.FillWeight = 80F;
+            this.PriceSer.HeaderText = "Giá";
+            this.PriceSer.Name = "PriceSer";
+            this.PriceSer.ReadOnly = true;
+            // 
+            // SaleSer
+            // 
+            this.SaleSer.DataPropertyName = "sale";
+            this.SaleSer.FillWeight = 80F;
+            this.SaleSer.HeaderText = "Khuyến Mại";
+            this.SaleSer.Name = "SaleSer";
+            this.SaleSer.ReadOnly = true;
+            // 
+            // SttSer
+            // 
+            this.SttSer.DataPropertyName = "stt";
+            this.SttSer.FillWeight = 50F;
+            this.SttSer.HeaderText = "Trạng Thái";
+            this.SttSer.Name = "SttSer";
+            this.SttSer.ReadOnly = true;
+            // 
+            // DescriptSer
+            // 
+            this.DescriptSer.DataPropertyName = "descript";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DescriptSer.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DescriptSer.FillWeight = 170F;
+            this.DescriptSer.HeaderText = "Mô Tả";
+            this.DescriptSer.Name = "DescriptSer";
+            this.DescriptSer.ReadOnly = true;
+            // 
+            // DateCreateSer
+            // 
+            this.DateCreateSer.DataPropertyName = "date_created";
+            this.DateCreateSer.FillWeight = 80F;
+            this.DateCreateSer.HeaderText = "Ngày tạo";
+            this.DateCreateSer.Name = "DateCreateSer";
+            this.DateCreateSer.ReadOnly = true;
+            // 
+            // DateUpdateSer
+            // 
+            this.DateUpdateSer.DataPropertyName = "date_update";
+            this.DateUpdateSer.FillWeight = 80F;
+            this.DateUpdateSer.HeaderText = "Ngày cập nhật";
+            this.DateUpdateSer.Name = "DateUpdateSer";
+            this.DateUpdateSer.ReadOnly = true;
             // 
             // button2
             // 
@@ -201,18 +285,29 @@
             this.ChangeSttService.Text = "toolStripButton3";
             this.ChangeSttService.Click += new System.EventHandler(this.ChangeSttService_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 32);
+            this.toolStripButton1.Text = "Làm mới";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.SearchType);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dataType_Rooms);
             this.panel2.Controls.Add(this.toolStrip2);
-            this.panel2.Location = new System.Drawing.Point(4, 308);
+            this.panel2.Location = new System.Drawing.Point(4, 331);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 205);
+            this.panel2.Size = new System.Drawing.Size(796, 191);
             this.panel2.TabIndex = 3;
             // 
             // SearchType
@@ -243,7 +338,8 @@
             // 
             this.dataType_Rooms.AllowUserToAddRows = false;
             this.dataType_Rooms.AllowUserToDeleteRows = false;
-            this.dataType_Rooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataType_Rooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataType_Rooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataType_Rooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -253,6 +349,7 @@
             this.Column9,
             this.Column10,
             this.Column11,
+            this.Moneys,
             this.Column12,
             this.Column13,
             this.Column14,
@@ -262,11 +359,114 @@
             this.dataType_Rooms.Location = new System.Drawing.Point(3, 40);
             this.dataType_Rooms.Name = "dataType_Rooms";
             this.dataType_Rooms.ReadOnly = true;
-            this.dataType_Rooms.Size = new System.Drawing.Size(790, 162);
+            this.dataType_Rooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataType_Rooms.Size = new System.Drawing.Size(790, 148);
             this.dataType_Rooms.TabIndex = 1;
             this.dataType_Rooms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataType_Rooms_CellClick);
             this.dataType_Rooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataType_Rooms_CellContentClick);
             this.dataType_Rooms.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataType_Rooms_RowPostPaint);
+            // 
+            // idType
+            // 
+            this.idType.DataPropertyName = "id";
+            this.idType.FillWeight = 40F;
+            this.idType.HeaderText = "id";
+            this.idType.Name = "idType";
+            this.idType.ReadOnly = true;
+            this.idType.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 30F;
+            this.Column8.HeaderText = "STT";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "name";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column9.FillWeight = 88.55048F;
+            this.Column9.HeaderText = "Tên";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "stt";
+            this.Column10.FillWeight = 50F;
+            this.Column10.HeaderText = "Trạng Thái";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "descript";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column11.FillWeight = 120F;
+            this.Column11.HeaderText = "Mô Tả";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Moneys
+            // 
+            this.Moneys.DataPropertyName = "moneys";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Moneys.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Moneys.FillWeight = 80F;
+            this.Moneys.HeaderText = "Giá";
+            this.Moneys.Name = "Moneys";
+            this.Moneys.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "ChildrentStandar";
+            this.Column12.FillWeight = 50F;
+            this.Column12.HeaderText = "Số trẻ em(Tiêu chuẩn)";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "ChildrentMax";
+            this.Column13.FillWeight = 50F;
+            this.Column13.HeaderText = "Số trẻ em(Tối đa)";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.DataPropertyName = "AdultStandar";
+            this.Column14.FillWeight = 50F;
+            this.Column14.HeaderText = "Số người lớn(Tiêu chuẩn)";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "AdultMax";
+            this.Column15.FillWeight = 50F;
+            this.Column15.HeaderText = "Số người lớn(Tối đa)";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.DataPropertyName = "date_created";
+            this.Column16.FillWeight = 80F;
+            this.Column16.HeaderText = "Ngày Tạo";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.DataPropertyName = "date_update";
+            this.Column17.FillWeight = 80F;
+            this.Column17.HeaderText = "Ngày cập nhật";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
             // 
             // toolStrip2
             // 
@@ -312,181 +512,6 @@
             this.ChangeSttType_Room.Text = "toolStripButton3";
             this.ChangeSttType_Room.Click += new System.EventHandler(this.ChangeSttType_Room_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(171)))), ((int)(((byte)(38)))));
-            this.label2.Location = new System.Drawing.Point(0, 268);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(806, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Loại Phòng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IdSer
-            // 
-            this.IdSer.DataPropertyName = "id";
-            this.IdSer.FillWeight = 40F;
-            this.IdSer.HeaderText = "id";
-            this.IdSer.Name = "IdSer";
-            this.IdSer.ReadOnly = true;
-            this.IdSer.Visible = false;
-            // 
-            // STT
-            // 
-            this.STT.FillWeight = 40F;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // NameSer
-            // 
-            this.NameSer.DataPropertyName = "name";
-            this.NameSer.HeaderText = "Tên Dịch Vụ";
-            this.NameSer.Name = "NameSer";
-            this.NameSer.ReadOnly = true;
-            // 
-            // PriceSer
-            // 
-            this.PriceSer.DataPropertyName = "price";
-            this.PriceSer.HeaderText = "Giá";
-            this.PriceSer.Name = "PriceSer";
-            this.PriceSer.ReadOnly = true;
-            // 
-            // SaleSer
-            // 
-            this.SaleSer.DataPropertyName = "sale";
-            this.SaleSer.HeaderText = "Khuyến Mại";
-            this.SaleSer.Name = "SaleSer";
-            this.SaleSer.ReadOnly = true;
-            // 
-            // SttSer
-            // 
-            this.SttSer.DataPropertyName = "stt";
-            this.SttSer.HeaderText = "Trạng Thái";
-            this.SttSer.Name = "SttSer";
-            this.SttSer.ReadOnly = true;
-            // 
-            // DescriptSer
-            // 
-            this.DescriptSer.DataPropertyName = "descript";
-            this.DescriptSer.HeaderText = "Mô Tả";
-            this.DescriptSer.Name = "DescriptSer";
-            this.DescriptSer.ReadOnly = true;
-            // 
-            // DateCreateSer
-            // 
-            this.DateCreateSer.DataPropertyName = "date_created";
-            this.DateCreateSer.HeaderText = "Ngày tạo";
-            this.DateCreateSer.Name = "DateCreateSer";
-            this.DateCreateSer.ReadOnly = true;
-            // 
-            // DateUpdateSer
-            // 
-            this.DateUpdateSer.DataPropertyName = "date_updated";
-            this.DateUpdateSer.HeaderText = "Ngày cập nhật";
-            this.DateUpdateSer.Name = "DateUpdateSer";
-            this.DateUpdateSer.ReadOnly = true;
-            // 
-            // idType
-            // 
-            this.idType.DataPropertyName = "id";
-            this.idType.FillWeight = 40F;
-            this.idType.HeaderText = "id";
-            this.idType.Name = "idType";
-            this.idType.ReadOnly = true;
-            this.idType.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 40F;
-            this.Column8.HeaderText = "STT";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "name";
-            this.Column9.FillWeight = 88.55048F;
-            this.Column9.HeaderText = "Tên";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "stt";
-            this.Column10.HeaderText = "Trạng Thái";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "dscript";
-            this.Column11.FillWeight = 88.55048F;
-            this.Column11.HeaderText = "Mô Tả";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "ChildrentStandar";
-            this.Column12.FillWeight = 40F;
-            this.Column12.HeaderText = "Số trẻ em(Tiêu chuẩn)";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "ChildrentMax";
-            this.Column13.FillWeight = 40F;
-            this.Column13.HeaderText = "Số trẻ em(Tối đa)";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.DataPropertyName = "AdultStandar";
-            this.Column14.FillWeight = 40F;
-            this.Column14.HeaderText = "Số người lớn(Tiêu chuẩn)";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.DataPropertyName = "AdultMax";
-            this.Column15.FillWeight = 40F;
-            this.Column15.HeaderText = "Số người lớn(Tối đa)";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column16
-            // 
-            this.Column16.DataPropertyName = "date_created";
-            this.Column16.HeaderText = "Ngày Tạo";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.DataPropertyName = "date_update";
-            this.Column17.HeaderText = "Ngày cập nhật";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 32);
-            this.toolStripButton1.Text = "Làm mới";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -497,17 +522,32 @@
             this.toolStripButton2.Text = "Làm mới";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(171)))), ((int)(((byte)(38)))));
+            this.label2.Location = new System.Drawing.Point(0, 289);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(806, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Loại Phòng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // SetupsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 525);
+            this.ClientSize = new System.Drawing.Size(806, 521);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "SetupsView";
-            this.Text = "SetupsView";
+            this.Text = "Dịch vụ";
             this.Load += new System.EventHandler(this.SetupsView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -543,6 +583,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox SearchType;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdSer;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameSer;
@@ -557,13 +599,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moneys;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

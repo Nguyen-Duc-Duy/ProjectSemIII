@@ -654,8 +654,34 @@
         JNsaF4ejCtqfdcayximC4AWsHgdhvb4dWwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="popupChangeCus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>220, 17</value>
+  </metadata>
+  <data name="ChangeInfor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAZNJREFUWEdj
+        GAXDHjwpKXF6WlQ08XVZGS9UiH7gTl2j59Pi4h9A/B+Ij77NzeWDStEebNx/JHrDvqNfL/ZPPA91AAif
+        f1ZcLAJVQjtwfk2NF9Dyn0D8f/3eI1+vdvVeQnJEF1QZbcD/6QzR/2cw/Dm5qf0AyAFQ/PNS34RrQMt/
+        Pi8stIcqpT6AWQ7E///PYPx/dPOEY3BH7D3y/nZjiy9UKfXB/5kMUQjLEfjE5q79QAd8W7/vmDNUKfXB
+        /2kMfkDLfqJbDsGMP85ubPCAKqU+wOVzKP4OlHeDKqU+IGD5t2Fs+QyGSCAepJbPYHCFKqU+ABo+avkA
+        WD6dIQJoAS7LvwCxHVQp9cFgtvwzENPU8kCgBb+QLKSj5StZrIEW/ECyEBl//z+LwROqlDbg/wG2+f+3
+        se7HYvlnYK1nC1VGO/D/IPt9IP7/fyvrAbpbPr3JwHrLZKX/YAeAMCQk6GM5CDSVms628PD/v7Zf9f//
+        Q+x3gI6Y+X8pqxlUmvagtdJ4UnOpycIJ1Ya0S+WjYHABBgYAlPr8ggHNDXUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="logout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFESURBVFhHYxgF6GDnnf9iu+/9WrHn3u93u+/9/k8+/nNv1/3f5VBjiQdAzWswDSMf77r3JxRq
+        NHEAqOkzuiEU4ft/5kKNJg5gNYQCDIzKVVCjiQPYDKEEjzqArg6Yuf35/113fqGI0dUBGQ1n/yeUnfi/
+        +co3uBjdHWAfuPV/QOq+/ytOfASLDYgDQNgjetf/2bteDpwDQNgxeNv/mqnXz0KNJg5gNbj+DIrBZOCJ
+        DA0NTFAr8AMaOQCEt5l7buODWoMb0NIBLqG7+aHW4AZUd0DQ1v8OQVsbGBj+M0KtwA+wOYBYjJ4IXcJ2
+        /G9ZeOc41GjiADaDicXIDvCO2/N/wf43A5MNw3MP/193/jNYjO4OSKs783/b9R9wMbo6YMArI2x41AFD
+        0gED3iwf2I4JtGu2Eqj5G7phJOJnZHXNRhhgYAAATIe+g+QoewUAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>124</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

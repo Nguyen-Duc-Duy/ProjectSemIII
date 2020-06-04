@@ -149,6 +149,27 @@ namespace Project
 				return this.GetTable<Servicer>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RoomsAble")]
+		public ISingleResult<RoomsAbleResult> RoomsAble([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string formDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string toDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> adults, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> childrents)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), formDate, toDate, adults, childrents);
+			return ((ISingleResult<RoomsAbleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.billsOfMonth")]
+		public ISingleResult<billsOfMonthResult> billsOfMonth([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dateStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dateEnd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dateStart, dateEnd);
+			return ((ISingleResult<billsOfMonthResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.billsOfMonthByDay")]
+		public ISingleResult<billsOfMonthByDayResult> billsOfMonthByDay([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string date)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
+			return ((ISingleResult<billsOfMonthByDayResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bills")]
@@ -166,8 +187,6 @@ namespace Project
 		private string _dateFrom;
 		
 		private string _decript;
-		
-		private double _totals;
 		
 		private int _stt;
 		
@@ -203,8 +222,6 @@ namespace Project
     partial void OndateFromChanged();
     partial void OndecriptChanging(string value);
     partial void OndecriptChanged();
-    partial void OntotalsChanging(double value);
-    partial void OntotalsChanged();
     partial void OnsttChanging(int value);
     partial void OnsttChanged();
     partial void Ondate_createdChanging(System.Nullable<System.DateTime> value);
@@ -333,26 +350,6 @@ namespace Project
 					this._decript = value;
 					this.SendPropertyChanged("decript");
 					this.OndecriptChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totals", DbType="Float NOT NULL")]
-		public double totals
-		{
-			get
-			{
-				return this._totals;
-			}
-			set
-			{
-				if ((this._totals != value))
-				{
-					this.OntotalsChanging(value);
-					this.SendPropertyChanging();
-					this._totals = value;
-					this.SendPropertyChanged("totals");
-					this.OntotalsChanged();
 				}
 			}
 		}
@@ -1570,7 +1567,7 @@ namespace Project
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_car_personal", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_car_personal", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
 		public string car_personal
 		{
 			get
@@ -2951,6 +2948,264 @@ namespace Project
 		{
 			this.SendPropertyChanging();
 			entity.Servicer = null;
+		}
+	}
+	
+	public partial class RoomsAbleResult
+	{
+		
+		private int _id;
+		
+		private string _name;
+		
+		private string _typeRoom;
+		
+		private double _price;
+		
+		private string _address_room;
+		
+		private System.Nullable<int> _AdultMax;
+		
+		private System.Nullable<int> _ChildrentMax;
+		
+		private System.Nullable<int> _AdultStandar;
+		
+		private System.Nullable<int> _ChildrentStandar;
+		
+		public RoomsAbleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(125) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typeRoom", DbType="NVarChar(125) NOT NULL", CanBeNull=false)]
+		public string typeRoom
+		{
+			get
+			{
+				return this._typeRoom;
+			}
+			set
+			{
+				if ((this._typeRoom != value))
+				{
+					this._typeRoom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float NOT NULL")]
+		public double price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this._price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address_room", DbType="NVarChar(125) NOT NULL", CanBeNull=false)]
+		public string address_room
+		{
+			get
+			{
+				return this._address_room;
+			}
+			set
+			{
+				if ((this._address_room != value))
+				{
+					this._address_room = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdultMax", DbType="Int")]
+		public System.Nullable<int> AdultMax
+		{
+			get
+			{
+				return this._AdultMax;
+			}
+			set
+			{
+				if ((this._AdultMax != value))
+				{
+					this._AdultMax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildrentMax", DbType="Int")]
+		public System.Nullable<int> ChildrentMax
+		{
+			get
+			{
+				return this._ChildrentMax;
+			}
+			set
+			{
+				if ((this._ChildrentMax != value))
+				{
+					this._ChildrentMax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdultStandar", DbType="Int")]
+		public System.Nullable<int> AdultStandar
+		{
+			get
+			{
+				return this._AdultStandar;
+			}
+			set
+			{
+				if ((this._AdultStandar != value))
+				{
+					this._AdultStandar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildrentStandar", DbType="Int")]
+		public System.Nullable<int> ChildrentStandar
+		{
+			get
+			{
+				return this._ChildrentStandar;
+			}
+			set
+			{
+				if ((this._ChildrentStandar != value))
+				{
+					this._ChildrentStandar = value;
+				}
+			}
+		}
+	}
+	
+	public partial class billsOfMonthResult
+	{
+		
+		private string _dateFrom;
+		
+		private System.Nullable<int> _num;
+		
+		public billsOfMonthResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateFrom", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string dateFrom
+		{
+			get
+			{
+				return this._dateFrom;
+			}
+			set
+			{
+				if ((this._dateFrom != value))
+				{
+					this._dateFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_num", DbType="Int")]
+		public System.Nullable<int> num
+		{
+			get
+			{
+				return this._num;
+			}
+			set
+			{
+				if ((this._num != value))
+				{
+					this._num = value;
+				}
+			}
+		}
+	}
+	
+	public partial class billsOfMonthByDayResult
+	{
+		
+		private string _dateFrom;
+		
+		private System.Nullable<int> _num;
+		
+		public billsOfMonthByDayResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateFrom", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string dateFrom
+		{
+			get
+			{
+				return this._dateFrom;
+			}
+			set
+			{
+				if ((this._dateFrom != value))
+				{
+					this._dateFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_num", DbType="Int")]
+		public System.Nullable<int> num
+		{
+			get
+			{
+				return this._num;
+			}
+			set
+			{
+				if ((this._num != value))
+				{
+					this._num = value;
+				}
+			}
 		}
 	}
 }

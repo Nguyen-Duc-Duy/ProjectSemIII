@@ -85,7 +85,7 @@ namespace Project
 
                     if (em.pass == pass)
                     {
-                        managerHotel MH = new managerHotel(em);
+                        managerHotel MH = new managerHotel(em,this);
                         MH.Show();
                         this.Hide();
                     }

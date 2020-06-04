@@ -28,18 +28,18 @@ namespace Project.Views.Setups
         {
 
         }
-
+        DateTime dateTimeNow = Convert.ToDateTime(DateTime.Now.ToString());
         //tạo mới
         private void CreateSer_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Now;
-            string format = "yyyy-MM-dd HH:mm:ss";
+
             Servicer s = new Servicer();
             s.name = NameSer.Text;
             s.price = Convert.ToDouble(PriceSer.Text);
             s.sale = (double)SaleSer.Value;
             s.descript = DescriptSer.Text;
-            s.date_created = Convert.ToDateTime(date.ToString(format));
+            //s.date_created = Convert.ToDateTime(date.ToString(format));
+            s.date_created = dateTimeNow;
 
             managerHotel.Servicers.InsertOnSubmit(s);
             managerHotel.SubmitChanges();
@@ -58,7 +58,7 @@ namespace Project.Views.Setups
             NameSer.Text = service.name;
             PriceSer.Text = service.price.ToString();
             SaleSer.Value = Convert.ToInt32(service.sale);
-            SttSer.Checked = service.stt == 1 ? true : true;
+            SttSer.Checked = service.stt == 1 ? true : false;
             DescriptSer.Text = service.descript;
 
         }
@@ -70,6 +70,8 @@ namespace Project.Views.Setups
             s.sale = Convert.ToInt32(SaleSer.Value);
             s.stt = SttSer.Checked == true ? 1 : 0;
             s.descript = DescriptSer.Text;
+            s.date_update = dateTimeNow;
+
             managerHotel.SubmitChanges();
 
             MessageBox.Show("Cập nhật thành công !");

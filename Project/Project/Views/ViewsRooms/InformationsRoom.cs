@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project.Views.ViewsRooms
@@ -48,18 +44,101 @@ namespace Project.Views.ViewsRooms
             NameRoom.Text = room.name;
             AddressRoom.Text = room.address_room;
             DescriptRoom.Text = room.descript;
-            StatusRoom.Checked = (room.stt == 1 ? true : false);
+            StatusRoom.Checked = (room.stt == 1 | room.stt == 0 ? true : false);
             comboTypeRoom.SelectedValue = room.id_type;
         }
+        //lấy giá trị form
+        private Room InforRoom(Room r)
+        {
+            r.name = NameRoom.Text;
+            r.address_room = AddressRoom.Text;
+            r.descript = DescriptRoom.Text;
+            r.id_type = (int)comboTypeRoom.SelectedValue;
+            return r;
+        }
+        DateTime dateTimeNow = DateTime.Now;
         //cập nhật
         private void updateRoom_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Room ro = managerHotel.Rooms.FirstOrDefault(r => r.id == room.id);
+                ro = InforRoom(ro);
+                ro.id = room.id;
+                ro.stt = StatusRoom.Checked == true ? 0 : -1;
+                ro.date_update = dateTimeNow;
+                //kiểm tra tên
+                if (checkNameRoom(ro.name))
+                {
+                    DialogResult confrim = MessageBox.Show("Tên bị trùng !", "Bạn vẫn muốn sử dụng tên này ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (confrim == DialogResult.Yes)
+                    {
+                        managerHotel.SubmitChanges();
+                        MessageBox.Show("Cập nhật thành công ! ");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    managerHotel.SubmitChanges();
+                    MessageBox.Show("Cập nhật thành công ! ");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cập nhật thất bại ! " + ex.Message);
+                this.Close();
+            }
         }
         //tạo mới
         private void createRoom_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Room r = new Room();
+                r = InforRoom(r);
+                r.date_created = dateTimeNow;
+                //kiểm tra tên
+                if (checkNameRoom(r.name))
+                {
+                    DialogResult confrim = MessageBox.Show("Tên bị trùng ! Bạn vẫn muốn sử dụng tên này ?","Xác nhận" , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (confrim == DialogResult.Yes)
+                    {
+                        managerHotel.Rooms.InsertOnSubmit(r);
+                        managerHotel.SubmitChanges();
+                        MessageBox.Show("Thêm mới thành công ! ");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    managerHotel.Rooms.InsertOnSubmit(r);
+                    managerHotel.SubmitChanges();
+                    MessageBox.Show("Thêm mới thành công ! ");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thêm mới thất bại ! " + ex.Message);
+                this.Close();
+            }
+        }
+        //kiểm tra tên phòng
+        private bool checkNameRoom(string name)
+        {
+            var room = managerHotel.Rooms.Where(x => x.name.Contains(name));
+            if (room == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

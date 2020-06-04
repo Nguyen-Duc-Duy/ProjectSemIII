@@ -31,6 +31,7 @@ namespace Project.Views.Setups
         {
 
         }
+        string dateTimeNow = DateTime.Now.ToString();
         //tạo mới loại phòng
         private void CreateType_Room_Click(object sender, EventArgs e)
         {
@@ -42,8 +43,11 @@ namespace Project.Views.Setups
             t.AdultStandar = (int)AdultStandar.Value;
             t.AdultMax = (int)AdultMax.Value;
             t.descript = DescriptType_Room.Text;
+            t.date_created = Convert.ToDateTime(dateTimeNow);
+
             managerHotel.Types_Rooms.InsertOnSubmit(t);
             managerHotel.SubmitChanges();
+
             MessageBox.Show("Thêm mới thành công !");
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -74,7 +78,11 @@ namespace Project.Views.Setups
             t.AdultStandar = (int)AdultStandar.Value;
             t.AdultMax = (int)AdultMax.Value;
             t.descript = DescriptType_Room.Text;
+            t.date_update = Convert.ToDateTime(dateTimeNow);
+            t.stt = SttType_Room.Checked == true ? 1 : 0;
+
             managerHotel.SubmitChanges();
+
             MessageBox.Show("Cập nhật thành công !");
             this.DialogResult = DialogResult.OK;
             this.Close();

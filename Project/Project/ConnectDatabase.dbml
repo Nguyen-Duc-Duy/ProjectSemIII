@@ -7,7 +7,6 @@
       <Column Name="id_cus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="dateFrom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="decript" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-      <Column Name="totals" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="stt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="date_update" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -64,7 +63,7 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
       <Column Name="sex" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="car_personal" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="car_personal" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="adults" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="childrens" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_nation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -130,4 +129,36 @@
       <Association Name="Servicer_Details_Bill" Member="Details_Bills" ThisKey="id" OtherKey="id_ser" Type="Details_Bill" />
     </Type>
   </Table>
+  <Function Name="dbo.RoomsAble" Method="RoomsAble">
+    <Parameter Name="formDate" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="toDate" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="adults" Type="System.Int32" DbType="Int" />
+    <Parameter Name="childrents" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RoomsAbleResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="typeRoom" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="address_room" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="AdultMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChildrentMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdultStandar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChildrentStandar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.billsOfMonth" Method="billsOfMonth">
+    <Parameter Name="dateStart" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dateEnd" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="billsOfMonthResult">
+      <Column Name="dateFrom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.billsOfMonthByDay" Method="billsOfMonthByDay">
+    <Parameter Name="date" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="billsOfMonthByDayResult">
+      <Column Name="dateFrom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

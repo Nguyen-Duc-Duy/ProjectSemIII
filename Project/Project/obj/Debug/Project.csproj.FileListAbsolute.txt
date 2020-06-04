@@ -75,7 +75,6 @@ F:\ProgramC# BKAP\Project\Project\obj\Debug\Project.pdb
 F:\ProgramC# BKAP\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 F:\ProgramC# BKAP\Project\Project\obj\Debug\Project.Views.Customers.CustomersView.resources
 F:\ProgramC# BKAP\Project\Project\obj\Debug\Project.Views.Employees.EmployeesView.resources
-F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.GradientPanel.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Customers.CustomersView.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Employees.InforEmployee.resources
@@ -84,7 +83,6 @@ F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Login.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.managerHotel.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Properties.Resources.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.OrdersRoom.OrdersView.resources
-F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.PaysView.PaysView.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Setups.InforService.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Setups.InforType_Room.resources
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Setups.SetupsView.resources
@@ -153,3 +151,16 @@ F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\Bunifu.UI.WinForms.Bunif
 F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
 F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.csproj.CopyComplete
+F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.OrdersRoom.OrderService.resources
+F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Pays.PaysView.resources
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.dll
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.WinForms.dll
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.Wpf.dll
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.pdb
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.xml
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.WinForms.pdb
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.WinForms.xml
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.Wpf.pdb
+F:\ProgramC# BKAP\box_project\Project\Project\bin\Debug\LiveCharts.Wpf.xml
+F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.Views.Dashboards.DashboardView.resources
+F:\ProgramC# BKAP\box_project\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache

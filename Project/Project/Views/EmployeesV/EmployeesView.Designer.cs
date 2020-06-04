@@ -38,6 +38,17 @@
             this.dataEm = new System.Windows.Forms.DataGridView();
             this.SearchEm = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.idEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SttEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_created = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_update = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEm)).BeginInit();
             this.SuspendLayout();
@@ -123,12 +134,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataEm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataEm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataEm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEm,
+            this.STT,
+            this.NameEm,
+            this.EmailEm,
+            this.SDTEm,
+            this.SttEmployee,
+            this.DescripEm,
+            this.date_created,
+            this.date_update,
+            this.Column1,
+            this.Column2});
             this.dataEm.Location = new System.Drawing.Point(-4, 81);
             this.dataEm.Name = "dataEm";
             this.dataEm.ReadOnly = true;
+            this.dataEm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataEm.Size = new System.Drawing.Size(683, 219);
             this.dataEm.TabIndex = 3;
             this.dataEm.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEm_CellClick);
+            this.dataEm.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataEm_RowPrePaint);
             // 
             // SearchEm
             // 
@@ -153,6 +178,92 @@
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // idEm
+            // 
+            this.idEm.DataPropertyName = "id";
+            this.idEm.HeaderText = "id";
+            this.idEm.Name = "idEm";
+            this.idEm.ReadOnly = true;
+            this.idEm.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 40F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // NameEm
+            // 
+            this.NameEm.DataPropertyName = "name";
+            this.NameEm.HeaderText = "Tên";
+            this.NameEm.Name = "NameEm";
+            this.NameEm.ReadOnly = true;
+            // 
+            // EmailEm
+            // 
+            this.EmailEm.DataPropertyName = "email";
+            this.EmailEm.FillWeight = 160F;
+            this.EmailEm.HeaderText = "Email";
+            this.EmailEm.Name = "EmailEm";
+            this.EmailEm.ReadOnly = true;
+            // 
+            // SDTEm
+            // 
+            this.SDTEm.DataPropertyName = "phone";
+            this.SDTEm.FillWeight = 80F;
+            this.SDTEm.HeaderText = "SĐT";
+            this.SDTEm.Name = "SDTEm";
+            this.SDTEm.ReadOnly = true;
+            // 
+            // SttEmployee
+            // 
+            this.SttEmployee.DataPropertyName = "stt";
+            this.SttEmployee.FillWeight = 60F;
+            this.SttEmployee.HeaderText = "Trạng thái";
+            this.SttEmployee.Name = "SttEmployee";
+            this.SttEmployee.ReadOnly = true;
+            // 
+            // DescripEm
+            // 
+            this.DescripEm.DataPropertyName = "decript";
+            this.DescripEm.FillWeight = 160F;
+            this.DescripEm.HeaderText = "Mô tả";
+            this.DescripEm.Name = "DescripEm";
+            this.DescripEm.ReadOnly = true;
+            // 
+            // date_created
+            // 
+            this.date_created.DataPropertyName = "date_created";
+            this.date_created.FillWeight = 80F;
+            this.date_created.HeaderText = "Ngày tạo";
+            this.date_created.Name = "date_created";
+            this.date_created.ReadOnly = true;
+            // 
+            // date_update
+            // 
+            this.date_update.DataPropertyName = "date_update";
+            this.date_update.FillWeight = 80F;
+            this.date_update.HeaderText = "Ngày sửa";
+            this.date_update.Name = "date_update";
+            this.date_update.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "pass";
+            this.Column1.HeaderText = "pass";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "avt";
+            this.Column2.HeaderText = "avt";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             // 
             // EmployeesView
             // 
@@ -186,5 +297,16 @@
         private System.Windows.Forms.TextBox SearchEm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameEm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailEm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDTEm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SttEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripEm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_created;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_update;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

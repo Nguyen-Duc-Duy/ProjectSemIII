@@ -55,7 +55,7 @@ namespace Project.Views.Employees
         private void dataEm_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            int rowSelected = Convert.ToInt32(dataEm.CurrentRow.Cells[0].Value.ToString());
+            int rowSelected = Convert.ToInt32(dataEm.CurrentRow.Cells["idEm"].Value.ToString());
             var Em = managerHotel.Employees.FirstOrDefault(x => x.id == rowSelected);
 
             EmSelected = Em;
@@ -133,6 +133,11 @@ namespace Project.Views.Employees
                          where (em.stt == 0 | em.stt == 1) where em.name.Contains(searchString)
                          select em;
             dataEm.DataSource = listEm;
+        }
+
+        private void dataEm_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dataEm.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

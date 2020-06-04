@@ -50,12 +50,16 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.popupChangeCus = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ChangeInfor = new System.Windows.Forms.ToolStripMenuItem();
+            this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.gradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avtUser)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.popupChangeCus.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -67,9 +71,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(142, 593);
+            this.statusStrip1.Location = new System.Drawing.Point(142, 597);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(846, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(902, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -80,8 +84,7 @@
             this.StatusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.StatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("StatusLabel.Image")));
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(183, 21);
-            this.StatusLabel.Text = "Thông giá trị đã hợp lệ";
+            this.StatusLabel.Size = new System.Drawing.Size(16, 17);
             // 
             // gradientPanel3
             // 
@@ -96,7 +99,7 @@
             this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradientPanel3.Location = new System.Drawing.Point(142, 0);
             this.gradientPanel3.Name = "gradientPanel3";
-            this.gradientPanel3.Size = new System.Drawing.Size(846, 52);
+            this.gradientPanel3.Size = new System.Drawing.Size(902, 52);
             this.gradientPanel3.TabIndex = 3;
             // 
             // dateLine
@@ -119,12 +122,14 @@
             this.avtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.avtUser.BackColor = System.Drawing.Color.Transparent;
             this.avtUser.Image = ((System.Drawing.Image)(resources.GetObject("avtUser.Image")));
-            this.avtUser.Location = new System.Drawing.Point(779, 3);
+            this.avtUser.Location = new System.Drawing.Point(835, 3);
             this.avtUser.Name = "avtUser";
             this.avtUser.Size = new System.Drawing.Size(55, 46);
             this.avtUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avtUser.TabIndex = 3;
             this.avtUser.TabStop = false;
+            this.avtUser.Click += new System.EventHandler(this.avtUser_Click);
+            this.avtUser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.avtUser_MouseClick);
             // 
             // timeLine
             // 
@@ -148,8 +153,9 @@
             this.userName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.userName.Font = new System.Drawing.Font("DINRoundPro-Medi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.Color.White;
-            this.userName.Location = new System.Drawing.Point(572, 15);
+            this.userName.Location = new System.Drawing.Point(628, 15);
             this.userName.Name = "userName";
+            this.userName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.userName.Size = new System.Drawing.Size(201, 26);
             this.userName.TabIndex = 1;
             this.userName.Text = "Tên tài khoản người dùng";
@@ -221,7 +227,7 @@
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(171, 41);
             this.btnOrder.TabIndex = 1;
-            this.btnOrder.Text = "Đặt Trước";
+            this.btnOrder.Text = "Đặt Phòng";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
@@ -295,6 +301,7 @@
             this.btnDashboard.TabIndex = 7;
             this.btnDashboard.Text = "Thống Kê";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnSetup
             // 
@@ -350,13 +357,37 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "XIXAO";
             // 
+            // popupChangeCus
+            // 
+            this.popupChangeCus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ChangeInfor,
+            this.logout});
+            this.popupChangeCus.Name = "changeInfor";
+            this.popupChangeCus.Size = new System.Drawing.Size(181, 70);
+            // 
+            // ChangeInfor
+            // 
+            this.ChangeInfor.Image = ((System.Drawing.Image)(resources.GetObject("ChangeInfor.Image")));
+            this.ChangeInfor.Name = "ChangeInfor";
+            this.ChangeInfor.Size = new System.Drawing.Size(180, 22);
+            this.ChangeInfor.Text = "Thay đổi thông tin";
+            this.ChangeInfor.Click += new System.EventHandler(this.ChangeInfor_Click);
+            // 
+            // logout
+            // 
+            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(180, 22);
+            this.logout.Text = "Đăng xuất";
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // managerHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(988, 619);
+            this.ClientSize = new System.Drawing.Size(1044, 619);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gradientPanel3);
             this.Controls.Add(this.gradientPanel1);
@@ -375,6 +406,7 @@
             this.gradientPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.popupChangeCus.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,5 +433,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private System.Windows.Forms.ContextMenuStrip popupChangeCus;
+        private System.Windows.Forms.ToolStripMenuItem ChangeInfor;
+        private System.Windows.Forms.ToolStripMenuItem logout;
     }
 }
