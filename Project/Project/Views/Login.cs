@@ -18,7 +18,7 @@ namespace Project
         {
             InitializeComponent();
             managerHotel = new ConnectDatabaseDataContext();
-            //InterfaceDefault();
+            InterfaceDefault();
         }
         //giao diện mặc định
         private void InterfaceDefault()

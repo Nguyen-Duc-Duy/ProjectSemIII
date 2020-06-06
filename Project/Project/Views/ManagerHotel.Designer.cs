@@ -283,6 +283,7 @@
             this.btnEmployee.TabIndex = 4;
             this.btnEmployee.Text = "Nhân Viên";
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Visible = false;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnDashboard
@@ -363,13 +364,13 @@
             this.ChangeInfor,
             this.logout});
             this.popupChangeCus.Name = "changeInfor";
-            this.popupChangeCus.Size = new System.Drawing.Size(181, 70);
+            this.popupChangeCus.Size = new System.Drawing.Size(172, 48);
             // 
             // ChangeInfor
             // 
             this.ChangeInfor.Image = ((System.Drawing.Image)(resources.GetObject("ChangeInfor.Image")));
             this.ChangeInfor.Name = "ChangeInfor";
-            this.ChangeInfor.Size = new System.Drawing.Size(180, 22);
+            this.ChangeInfor.Size = new System.Drawing.Size(171, 22);
             this.ChangeInfor.Text = "Thay đổi thông tin";
             this.ChangeInfor.Click += new System.EventHandler(this.ChangeInfor_Click);
             // 
@@ -377,7 +378,7 @@
             // 
             this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(180, 22);
+            this.logout.Size = new System.Drawing.Size(171, 22);
             this.logout.Text = "Đăng xuất";
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="bdr, Version=2.1.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.2.1.9\lib\Utilities\bdr.exe</HintPath>
     </Reference>
@@ -123,6 +124,7 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -137,6 +139,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -216,22 +220,24 @@
     <Compile Include="Views\OrdersRoom\OrdersView.Designer.cs">
       <DependentUpon>OrdersView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pays\CrystalReportPays.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPays.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Pays\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Pays\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pays\Model\pays.cs" />
     <Compile Include="Views\Pays\PaysView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Pays\PaysView.Designer.cs">
       <DependentUpon>PaysView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pays\TickPay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Pays\TickPay.Designer.cs">
-      <DependentUpon>TickPay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pays\TickPay1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TickPay.rpt</DependentUpon>
     </Compile>
     <Compile Include="Views\Setups\InforService.cs">
       <SubType>Form</SubType>
@@ -295,12 +301,15 @@
     <EmbeddedResource Include="Views\OrdersRoom\OrdersView.resx">
       <DependentUpon>OrdersView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Pays\CrystalReportPays.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPays.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Pays\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Pays\PaysView.resx">
       <DependentUpon>PaysView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Pays\TickPay.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TickPay1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Setups\InforService.resx">
       <DependentUpon>InforService.cs</DependentUpon>

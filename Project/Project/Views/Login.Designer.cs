@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.gradientPanel1 = new Project.GradientPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.errorPass = new System.Windows.Forms.Label();
             this.errorEmail = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.inputEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,18 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(420, 506);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 474);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(417, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "XIXAO";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuGradientPanel1
             // 
@@ -135,7 +147,6 @@
             this.inputPass.Name = "inputPass";
             this.inputPass.Size = new System.Drawing.Size(235, 22);
             this.inputPass.TabIndex = 5;
-            this.inputPass.Text = "1";
             this.inputPass.UseSystemPasswordChar = true;
             // 
             // gradientPanel2
@@ -167,7 +178,6 @@
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(235, 22);
             this.inputEmail.TabIndex = 2;
-            this.inputEmail.Text = "manager@gmail.com";
             this.inputEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputEmail_KeyDown);
             // 
             // label2
@@ -191,18 +201,6 @@
             this.label1.Size = new System.Drawing.Size(107, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 474);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(417, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "XIXAO";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login
             // 

@@ -34,8 +34,8 @@
             this.createRoom = new System.Windows.Forms.ToolStripButton();
             this.updateRoom = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.comboFilter = new System.Windows.Forms.ComboBox();
             this.pay = new System.Windows.Forms.ToolStripButton();
+            this.comboFilter = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,16 @@
             this.toolStripButton1.Text = "Đặt phòng";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // pay
+            // 
+            this.pay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pay.Image = ((System.Drawing.Image)(resources.GetObject("pay.Image")));
+            this.pay.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pay.Name = "pay";
+            this.pay.Size = new System.Drawing.Size(23, 22);
+            this.pay.Text = "Thanh toán";
+            this.pay.Click += new System.EventHandler(this.pay_Click);
+            // 
             // comboFilter
             // 
             this.comboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -107,17 +117,8 @@
             this.comboFilter.Name = "comboFilter";
             this.comboFilter.Size = new System.Drawing.Size(195, 24);
             this.comboFilter.TabIndex = 0;
+            this.comboFilter.Visible = false;
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
-            // 
-            // pay
-            // 
-            this.pay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pay.Image = ((System.Drawing.Image)(resources.GetObject("pay.Image")));
-            this.pay.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pay.Name = "pay";
-            this.pay.Size = new System.Drawing.Size(23, 22);
-            this.pay.Text = "Thanh toán";
-            this.pay.Click += new System.EventHandler(this.pay_Click);
             // 
             // RoomsView
             // 

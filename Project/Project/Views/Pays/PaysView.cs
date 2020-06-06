@@ -352,10 +352,12 @@ namespace Project.Views.Pays
             }
 
         }
+        //xuất hóa đơn
+        //tạo file excel
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dataSearch_SelectionChanged(object sender, EventArgs e)

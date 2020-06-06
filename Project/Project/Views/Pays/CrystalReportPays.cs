@@ -16,14 +16,14 @@ namespace Project.Views.Pays {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TickPay : ReportClass {
+    public class CrystalReportPays : ReportClass {
         
-        public TickPay() {
+        public CrystalReportPays() {
         }
         
         public override string ResourceName {
             get {
-                return "TickPay.rpt";
+                return "CrystalReportPays.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Project.Views.Pays {
         
         public override string FullResourceName {
             get {
-                return "Project.Views.Pays.TickPay.rpt";
+                return "Project.Views.Pays.CrystalReportPays.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Project.Views.Pays {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTickPay : Component, ICachedReport {
+    public class CachedCrystalReportPays : Component, ICachedReport {
         
-        public CachedTickPay() {
+        public CachedCrystalReportPays() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Project.Views.Pays {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TickPay rpt = new TickPay();
+            CrystalReportPays rpt = new CrystalReportPays();
             rpt.Site = this.Site;
             return rpt;
         }

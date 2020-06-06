@@ -3,7 +3,7 @@ GO
 USE ManagerHotel_ProjectsXixao
 GO
 
---lấy phòng có thể đặt
+--proc lấy phòng có thể đặt
 create proc RoomsAble
 @formDate varchar(12),@toDate varchar(12),@adults int, @childrents int
 as 
@@ -18,7 +18,7 @@ on t.id = r.id_type
 			
 )and ((t.AdultMax >= @adults and t.ChildrentMax >= @childrents) or (t.AdultStandar >=@adults and t.ChildrentStandar >= @childrents))
 
-exec  RoomsAble '2020-06-04','2020-06-05',1,1
+--exec  RoomsAble '2020-06-04','2020-06-05',1,1
 
 -- table Room
 CREATE TABLE Rooms
@@ -29,20 +29,20 @@ CREATE TABLE Rooms
 	address_room NVARCHAR(125)NOT NULL,
 	descript NVARCHAR(256) NULL,
 	stt INT NOT NULL DEFAULT(1),
-	date_created DATETIME DEFAULT(GETDATE()),
-	date_update DATETIME DEFAULT(GETDATE())
+	date_created DATETIME,
+	date_update DATETIME
 )
 GO
+--có 3 trạng thái : 1 - đang sử dụng,0 - trống,-1 - không thể sử dụng
 insert into Rooms(name,id_type,address_room,descript,stt)
-values (N'001',1,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',1)
+values (N'001',1,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',0)
 insert into Rooms(name,id_type,address_room,descript,stt)
-values (N'002',2,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',1)
+values (N'002',2,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',0)
 insert into Rooms(name,id_type,address_room,descript,stt)
-values (N'003',2,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',1)
+values (N'003',2,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',0)
 insert into Rooms(name,id_type,address_room,descript,stt)
 values (N'004',2,N'Tầng 2','phòng có sẵn các dịch vụ cơ bẳn',0)
-select * from Rooms
-select * from Customers
+
 -- table Service
 CREATE TABLE Servicers
 (
@@ -52,11 +52,11 @@ CREATE TABLE Servicers
 	sale FLOAT NULL,
 	stt INT NOT NULL DEFAULT(1),
 	descript NVARCHAR(256) NULL,
-	date_created DATETIME ,
+	date_created DATETIME,
 	date_update DATETIME
 )
 GO
-
+select * from Types_Room
 -- table types
 CREATE TABLE Types_Room
 (
@@ -73,12 +73,12 @@ CREATE TABLE Types_Room
 	date_update DATETIME DEFAULT(GETDATE())
 )
 GO
-select * from Customers
 
-insert into Types_Room(name,moneys,member_max,member_standar,descript)
-values (N'2 giường đơn',250000,N'2 người lớn - 2 trẻ em (dưới 12 tuổi),4 trẻ em dưới 12t tuổi',N'2 người lớn,2 trẻ em',N'Các bé dưới 7 tuổi nên có cha mẹ cùng phòng')
-insert into Types_Room(name,moneys,member_max,member_standar,descript)
-values (N'2 giường đơn, 1 giường đôi',250000,N'2 người lớn - 2 trẻ em (dưới 12 tuổi),4 trẻ em dưới 12t tuổi',N'2 người lớn,2 trẻ em',N'Các bé dưới 7 tuổi nên có cha mẹ cùng phòng')
+
+insert into Types_Room(name,moneys,AdultMax,ChildrentMax,AdultStandar,ChildrentStandar,descript)
+values (N'2 giường đơn',250000,2,2,2,1,N'Các bé dưới 7 tuổi nên có cha mẹ cùng phòng')
+insert into Types_Room(name,moneys,AdultMax,ChildrentMax,AdultStandar,ChildrentStandar,descript)
+values (N'2 giường đơn, 1 giường đôi',250000,3,2,2,2,N'Các bé dưới 7 tuổi nên có cha mẹ cùng phòng')
 -- table Unit
 /*
 CREATE TABLE Units
@@ -110,12 +110,12 @@ CREATE TABLE Bills
 	date_update DATETIME DEFAULT(GETDATE())
 )
 GO
-
+select * from Details_Bill
 -- table Detail_Bill
 CREATE TABLE Details_Bill
 (
 	id_bill INT NOT NULL,
-	id_ser INT NOT NULL,
+	id_ser INT NULL,
 	quantity TINYINT NOT NULL DEFAULT(1),
 	id_room INT NOT NULL
 )
@@ -187,7 +187,6 @@ ADD CONSTRAINT FK_DetailsRoom FOREIGN KEY  (id_room) REFERENCES Rooms(id)
 ALTER TABLE Customers
 ADD CONSTRAINT FK_CusCountry FOREIGN KEY  (id_nation) REFERENCES country(id)
 
-select * from Bills
 
 SELECT * FROM Servicers s
 full outer join Details_Bill db
@@ -209,11 +208,11 @@ as
 select b.dateFrom ,COUNT(dateFrom) as 'num' from Bills b where dateFrom = @date group by dateFrom
 
 exec billsOfMonthByDay '2020-06-05'
+
 select * from Country
 select * from Bills 
-select * from Details_Bill b where id_bill = 17 group by id_room
+select * from Details_Bill
 select * from Customers
 select * from Rooms
 select * from Employees
-
-select * from Bills where id_cus = 26
+select * from Bills
